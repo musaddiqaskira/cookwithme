@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-CSRF_TRusted_ORIGINS = ["*"]
+CSRF_TRusted_ORIGINS = ["https://cookwithme-production.up.railway.app"]
 
 
 # Application definition
