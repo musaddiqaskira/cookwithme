@@ -6,7 +6,7 @@ from .models import Post, Category, Meal
 
 admin.site.register(Category)
 admin.site.register(Meal)
-admin.register(Post)
+admin.site.register(Post)
 admin.site.site_header = "CookWithMe Admin"
 admin.site.site_title = "CookWithMe Admin Portal"
 admin.site.index_title = "Welcome to CookWithMe Portal"
