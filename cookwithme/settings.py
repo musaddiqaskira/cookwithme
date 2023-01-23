@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
     'rest_framework',
     "storages",
+    "boto3",
 ]
 
 MIDDLEWARE = [
