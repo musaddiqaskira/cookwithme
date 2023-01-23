@@ -27,23 +27,25 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+CSRF_TRusted_ORIGINS = ["*"]
+
 
 # Application definition
 
 INSTALLED_APPS = [
-    #account
+    # account
     'account.apps.AccountConfig',
-    #end
+    # end
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #local apps
+    # local apps
     'recipe.apps.RecipeConfig',
     'api.apps.ApiConfig',
-    #include apps
+    # include apps
     'django.contrib.postgres',
     'rest_framework'
 ]
