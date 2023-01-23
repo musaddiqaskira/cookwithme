@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     # include apps
     'django.contrib.postgres',
-    'rest_framework'
+    'rest_framework',
+    "storages",
 ]
 
 MIDDLEWARE = [
@@ -138,11 +139,19 @@ LOGOUT_REDIRECT_URL = '/recipe/profile'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
+AWS_ACCESS_KEY_ID = "AKIA4YILLI6Z4MWTYT2P"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "cookwithme"
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
