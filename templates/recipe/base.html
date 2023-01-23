@@ -1,0 +1,33 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Food, Recipe, Blog">
+    <meta name="description" content="Free Recipe Blogging Site">
+    <meta name="author" content="Musaddiq Askira">
+    <title>{%block title%}CookWithMe{%endblock%}</title>
+    <!-- <link rel="stylesheet" href='{% static "css/build/index.css" %}'> -->
+    <link rel="stylesheet" href='{% static "css/recipe.css" %}'>
+    
+    <!-- CSS only -->
+</head>
+<body>
+        {%block content%}
+        {%endblock%}
+    <footer class="primary-navigation">
+        <nav>
+          <a href="{% url 'recipe:post_list' %}">Home</a>
+          <a href="{% url 'recipe:shop' %}">Shop</a>
+          <a href="{% url 'recipe:new_recipe' %}">Create</a>
+          <a href="{% url 'recipe:post_search' %}">Explore</a>
+          <a href="{% url 'recipe:profile' %}">Profile</a>
+        </nav>
+    </footer>
+    {% block script %}
+      
+    {% endblock script %}
+</body>
+</html>

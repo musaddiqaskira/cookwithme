@@ -1,0 +1,80 @@
+{%extends '../base.html'%}
+{% load static %}
+{% block content %}
+<div class="detail">
+{% if request.user.is_authenticated %}
+    <aside>
+        
+    </aside>
+    <div class="recipe-detail">
+        <a href="home.html">
+            <div class="back-to-home">
+                <i class="arrow left icon" style="font-size: 20px; color: black;"></i>
+            </div>
+        </a>
+        <img src="{{post.image.url}}" alt="">
+        <div class="recipe">
+            <div class="recipe-head">
+                <div class="secondry-category">
+                    <img src="{{post.category.icon.url}}" alt="smoothie categoty" class="content-category">
+                    <span><b>SMOOTHIE</b></span>
+                </div>
+                <div class="favorite-detail-icon">
+                    <i class="heart outline icon" style="font-size: 25px;"></i>
+                </div>
+            </div>
+
+            <div class="recipe-head-text">
+                <h3 class="food-name">
+                    Strawberry Raspberry<br>Blueberry Smoothie
+                </h3>
+                <div class="attr">
+                    <div class="attr1">
+                        <h3>3</h3>
+                        <span>Servings</span>
+                    </div>
+                    <div class="attr2">
+                        <h3>10</h3>
+                        <span>Minutes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-nav">
+                <button class="tablinks" onclick="openTab(event, 'Ingredient')" id="defaultOpen">Ingredients</button>
+                <button class="tablinks" onclick="openTab(event, 'Instruction')">Instructions</button>
+                <button class="tablinks" onclick="openTab(event, 'Nutrition')">Nutritions</button>
+            </div>
+            <div id="Ingredient" class="tabcontent">
+                <ul>
+                    <li><p>1<sup>1</sup>/<sub>2</sub> cups each Strawberry, <br>Raspberry, Blueberry, cut <br>into chuncks.</p></li>
+                    <li><p>1 cup ice.</p></li>
+                    <li><p>1<sup>1</sup>/<sub>2</sub> plain yogurt.</p></li>
+                    <li><p>3 table spoon of Sugar (optional)</p></li>
+                    <li><p>1<sup>1</sup>/<sub>2</sub> plain yogurt.</p></li>
+                    <li><p>3 table spoon of Sugar (optional)</p></li>
+                </ul>
+            </div>
+            <div id="Instruction" class="tabcontent">
+                <ul>
+                    <li>Instruction</li>
+                </ul>
+            </div>
+            <div id="Nutrition" class="tabcontent">
+                <ul>
+                    <li>Nutrition</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div>
+        <h1>Login is required</h1>
+        <button><a href="{% url 'login' %}">Logout</a></button>
+    </div>
+  
+{% endif %} 
+</div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock script %}

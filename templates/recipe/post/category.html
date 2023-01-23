@@ -1,0 +1,43 @@
+{%extends '../base.html'%}
+{% load static %}
+{% block content %}
+    <div class="category-heading">
+        <h2 class="categories-title" >{{category.title}}</h2>
+        <img src="{{category.icon.url}}" alt="" width="50px" height="50px">
+    </div>
+    <br>
+    <div class="recommendation-container">
+        {% for recipe in detail_category %}
+    <div class="recommendation-card">
+        <span class="publish">Published by {{recipe.author}}</span>
+        <div class="recommendation-card-image-container">
+          <img
+            src="{{recipe.image.url}}"
+            alt=""
+            class="recommendation-image"
+          />
+          <div class="image-text-container">
+            <span class="image-text"><a href="{% url 'recipe:category_detail' recipe.category.pk %}" style="color: white;">{{post.category}}</a></span>
+            <img
+              src="{% static 'icons/bookmark_border-24px.svg' %}"
+              alt=""
+              class="image-bookmark"
+            />
+          </div>
+        </div>
+        <a href="{{recipe.get_absolute_url}}">
+            <div class="card-text">
+                <h5 class="card-title">{{recipe.title}}</h5>
+                <p class="card-body">
+                  {{recipe.description}}
+                </p>
+                <div class="date-time">
+                  <span class="published-date">2.6k <sub>likes</sub></span>
+                  <span class="cooking-time">{{recipe.minutes}} mins</span>
+                </div>
+              </div>
+        </a>
+    </div>
+    {% endfor %}
+    </div>
+{% endblock %}

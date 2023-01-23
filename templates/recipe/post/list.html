@@ -1,0 +1,82 @@
+{%extends '../base.html'%}
+{% load static %}
+{% block content%}
+<main>
+    <header class="app-header">
+      <!-- <div class="icon-container" style="display: none">
+        <img src="media/icons/shop-icon.svg" alt="" class="icon" />
+        <p class="icon-name">Shop</p>
+      </div> -->
+      <h1 class="app-title" style="margin: 0 auto">
+        Cook<span>With</span>Me
+      </h1>
+      <!-- <div class="icon-container" style="display: none">
+        <img src="media/icons/movie-24px.svg" alt="" class="icon" />
+        <p class="icon-name tv">TV</p>
+      </div> -->
+    </header>
+    <div class="categories">
+      <h2 class="categories-title">Categories</h2>
+      <div class="categories-container">
+        {% for category in categories %}
+        <a href="{% url 'recipe:category_detail' category.pk %}">
+        <div class="category">
+            <img src="{{category.icon.url}}" alt="" class="category-icon" />
+            <p class="icon-name">{{category.title}}</p>
+        </div>
+        </a>
+        {% endfor %}
+    </div>
+    <div class="time-based-recommendations">
+      <h3 class="recommendation-title">{{meal_title}}</h3>
+      <div class="time-based-recommendation-container">
+        {% for meal in meals %}
+        <div class="time-based-recommendation-card">
+            <img
+              src="{{ meal.image.url }}"
+              alt=""
+              class="recommendation-card-image"
+            />
+          </div>
+        {% endfor %}
+    </div>
+    <div class="recommendations">
+      <h3 class="recommendation-title">Recommendations</h3>
+      <div class="recommendation-container">
+        {% for post in posts%}
+        <div class="recommendation-card">
+            <span class="publish">Published by {{post.author}}</span>
+            <div class="recommendation-card-image-container">
+              <img
+                src="{{post.image.url}}"
+                alt=""
+                class="recommendation-image"
+              />
+              <div class="image-text-container">
+                <span class="image-text"><a href="{% url 'recipe:category_detail' post.category.pk %}" style="color: white;">{{post.category}}</a></span>
+                <img
+                  src="{% static 'icons/bookmark_border-24px.svg' %}"
+                  alt=""
+                  class="image-bookmark"
+                />
+              </div>
+            </div>
+            <a href="{{post.get_absolute_url}}">
+                <div class="card-text">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <p class="card-body">
+                      {{post.description}}
+                    </p>
+                    <div class="date-time">
+                      <span class="published-date">2.6k <sub>likes</sub></span>
+                      <span class="cooking-time">{{post.minutes}} mins</span>
+                    </div>
+                  </div>
+            </a>
+        </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

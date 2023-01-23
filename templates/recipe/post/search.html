@@ -1,0 +1,86 @@
+{%extends '../base.html'%}
+{% load static %}
+{% block content %}
+{% if query %}
+<h1>Posts containing "{{ query }}"</h1>
+<h3>
+  {% with results.count as total_results %}
+    Found {{ total_results }} result{{ total_results|pluralize }}
+  {% endwith %}
+</h3>
+{% for post in results %}
+  <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
+  {{ post.body}}
+{% empty %}
+  <p>There are no results for your query.</p>
+{% endfor %}
+<p><a href='{% url "recipe:post_search" %}'>Search again</a></p>
+{% else %}
+<h3 class="explore-section-header">Explore</h3>
+<form method="get">
+<div class="search">
+  {{form}}
+  <input type="submit" value="Search" class="search-btn">
+</div>
+</form>
+<div class="categories-container">
+  <div class="tags">
+    <a href="#">#tagOn</a>
+  </div>
+  <div class="tags">
+    <a href="#">#tagit</a>
+  </div>
+  <div class="tags">
+    <a href="#">#taging</a>
+  </div>
+  <div class="tags">
+    <a href="#">#tagHello</a>
+  </div>
+  <div class="tags">
+    <a href="#">#tagHim</a>
+  </div>
+  <div class="tags">
+    <a href="#">#tagtag</a>
+  </div>
+  <div class="tags">
+    <a href="#">#tag</a>
+  </div>
+</div>
+
+<h3 class="recommendation-title">Recipes From Accounts You Follow</h3>
+<div class="time-based-recommendation-container">
+  {% for post in posts%}
+        <div class="recommendation-card v-scroll">
+            <span class="publish">Published by {{post.author}}</span>
+            <div class="recommendation-card-image-container">
+              <img
+                src="{{post.image.url}}"
+                alt=""
+                class="recommendation-image"
+              />
+              <div class="image-text-container">
+                <span class="image-text"><a href="{% url 'recipe:category_detail' post.category.pk %}" style="color: white;">{{post.category}}</a></span>
+                <img
+                  src="{% static 'icons/bookmark_border-24px.svg' %}"
+                  alt=""
+                  class="image-bookmark"
+                />
+              </div>
+            </div>
+            <a href="{{post.get_absolute_url}}">
+                <div class="card-text">
+                    <h5 class="card-title">{{post.title | truncatechars:25}}</h5>
+                    <p class="card-body">
+                      {{post.description | truncatechars:32}}
+                    </p>
+                    <div class="date-time">
+                      <span class="published-date">2.6k <sub>likes</sub></span>
+                      <span class="cooking-time">{{post.minutes}} mins</span>
+                    </div>
+                  </div>
+            </a>
+        </div>
+        {% endfor %}
+</div>
+{% endif %}
+{% endblock %}
