@@ -1,0 +1,308 @@
+a {
+  text-decoration: none;
+  color: #10171f;
+}
+
+.primary-navigation {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+.primary-navigation nav {
+  display: flex;
+  justify-content: space-between;
+  width: 96vw;
+  position: fixed;
+  bottom: 0;
+  height: auto;
+  background-color: silver;
+  padding: 10px;
+}
+
+.login-box {
+  width: 100%;
+  height: 90vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0px 0px 3px #666;
+  color: #7b898a;
+}
+.login-box input {
+  width: 98%;
+  height: 34px;
+  border-radius: 20px;
+  border: 1px solid gray;
+  text-align: center;
+  box-shadow: 0px 0px 2px #666;
+}
+.login-box input:focus {
+  outline: none;
+}
+
+.time-based-recommendations .time-based-recommendation-container, .categories-container {
+  width: auto;
+  height: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.time-based-recommendations .time-based-recommendation-container::-webkit-scrollbar, .categories-container::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
+
+/*list page styling*/
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.app-header h1 {
+  color: #e67e22;
+  text-shadow: 3px 3px 6px #757575;
+}
+.app-header h1 span {
+  color: #34495e;
+}
+
+.categories h2 {
+  color: #34495e;
+}
+
+.categories-container .category {
+  display: inline-block;
+  padding-right: 30px;
+}
+.categories-container .category img {
+  width: 50px;
+  height: 50px;
+}
+.categories-container .category p {
+  color: #34495e;
+  padding-left: 8px;
+}
+
+.time-based-recommendations h3 {
+  color: #34495e;
+}
+.time-based-recommendations .time-based-recommendation-container {
+  padding: 10px;
+}
+.time-based-recommendations .time-based-recommendation-container .time-based-recommendation-card {
+  width: 85%;
+  height: 29vh;
+  border-radius: 20px;
+  margin-right: 15px;
+  display: inline-block;
+  box-shadow: 0px 0px 6px #666;
+}
+.time-based-recommendations .time-based-recommendation-container .time-based-recommendation-card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+.recommendations .recommendation-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.recommendations .recommendation-card {
+  width: 48%;
+  height: 33vh;
+  border-radius: 5%;
+  box-shadow: 0px 0px 6px #666;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.recommendations .recommendation-card .publish {
+  font-size: 12px;
+  color: #7b898a;
+}
+.recommendations .recommendation-card .recommendation-card-image-container {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  box-shadow: 0px 0px 2px #666;
+}
+.recommendations .recommendation-card .recommendation-card-image-container .recommendation-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.recommendations .recommendation-card .recommendation-card-image-container .image-text-container {
+  position: absolute;
+  top: 2px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.recommendations .recommendation-card .recommendation-card-image-container .image-text-container .image-text {
+  padding: 4%;
+  color: white;
+  text-shadow: 1px 1px 6px black;
+}
+.recommendations .recommendation-card .recommendation-card-image-container .image-text-container .image-bookmark {
+  margin-right: 5px;
+}
+.recommendations .recommendation-card .card-text .card-title {
+  color: #34495e;
+  margin-top: 0%;
+  padding-top: 5px;
+}
+.recommendations .recommendation-card .card-text .card-body {
+  margin-top: -8%;
+  font-size: 0.7em;
+  font-weight: bold;
+  color: #5e748a;
+}
+.recommendations .recommendation-card .card-text .date-time {
+  display: flex;
+  justify-content: space-around;
+  color: #949797;
+  font-size: 1em;
+}
+
+/*endlist*/
+/*detail*/
+/*end detail*/
+/*detail page styling */
+.recipe-detail {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  position: relative;
+  overflow-x: hidden;
+}
+.recipe-detail img {
+  width: 100%;
+  height: 50%;
+}
+
+.recipe-head {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.recipe-head .secondry-category > span {
+  /* color:rgb(247, 114, 114); */
+  color: #e67e22;
+  margin-top: 25%;
+}
+
+.favorite-detail-icon {
+  width: 1%;
+  margin-top: 5%;
+}
+
+.food-name {
+  margin-left: 20%;
+  color: #3b3b3b;
+}
+
+.attr {
+  margin-left: 20%;
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.attr .attr1 > span,
+.attr .attr2 > span {
+  color: #636161;
+}
+
+/*addition*/
+.detail-nav {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 90%;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.detail-nav p {
+  font-size: 1em;
+  color: #636161;
+}
+.detail-nav button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+.detail-nav button:hover {
+  background-color: #ddd;
+}
+.detail-nav button.active {
+  background-color: #ccc;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  width: 100%;
+  height: 60%;
+  overflow-y: scroll;
+}
+
+.tabcontent {
+  animation: fadeEffect 1s;
+  /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*end*/
+.ingred {
+  font-weight: bold;
+}
+
+.ingredient {
+  margin-left: 12%;
+  color: #636161;
+}
+
+li {
+  line-height: 5;
+}
+
+.back-to-home {
+  position: fixed;
+  top: 3%;
+  left: 2%;
+  width: 8%;
+  height: 8%;
+}
+
+.category-heading {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+/*# sourceMappingURL=index.css.map */

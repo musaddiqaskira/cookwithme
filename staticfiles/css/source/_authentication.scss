@@ -1,0 +1,23 @@
+.login-box {
+  width: 100%;
+  height: 90vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0px 0px 3px #666;
+  color: #7b898a;
+  input {
+    width: 98%;
+    height: 34px;
+    border-radius: 20px;
+    border: 1px solid gray;
+    text-align: center;
+    box-shadow: 0px 0px 2px #666;
+  }
+  input:focus {
+    outline: none;
+  }
+}

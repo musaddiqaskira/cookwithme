@@ -1,0 +1,20 @@
+a {
+  text-decoration: none;
+  color: #10171f;
+}
+.primary-navigation {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    width: 96vw;
+    position: fixed;
+    bottom: 0;
+    height: auto;
+    background-color: silver;
+    padding: 10px;
+  }
+}
