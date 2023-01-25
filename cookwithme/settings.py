@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -89,11 +94,11 @@ WSGI_APPLICATION = 'cookwithme.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'qHICM8LgPOu7K3EY3AZp',
-        'HOST': 'containers-us-west-171.railway.app',
-        'PORT': '6109'
+        'NAME': env('DATABASE_NAME'),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASSWORD'),
+        'HOST': env('DATABASE_HOST'),
+        'PORT': env('DATABASE_PORT'),
     }
 }
 
@@ -139,9 +144,9 @@ LOGOUT_REDIRECT_URL = '/recipe/profile'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
-AWS_ACCESS_KEY_ID = "AKIA4YILLI6Z4MWTYT2P"
-AWS_SECRET_ACCESS_KEY = "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"
-AWS_STORAGE_BUCKET_NAME = "cookwithme"
+AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
